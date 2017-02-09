@@ -961,6 +961,10 @@ void CPlayers::RenderPlayer(
 					TextRender()->TextColor(0.7f, 0.7f, 1.0f, a);
 			}
 
+			// highlight players with AllTheHaxx/ZClient/etc client
+			if (pPlayerChar->m_PlayerFlags>>5 > 0)
+				TextRender()->TextColor(0.5f, 1.0f, 0.5f, a);
+
 			TextRender()->Text(0, Position.x-tw/2.0f, Position.y-FontSize-38.0f, FontSize, pName, -1);
 
 			if(g_Config.m_ClNameplatesClan)
